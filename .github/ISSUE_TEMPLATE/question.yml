@@ -1,0 +1,141 @@
+name: ❓ 質問・サポート
+description: 使い方やトラブルシューティングに関する質問
+title: "[Question]: "
+labels: ["❓question", "00.未着手"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 質問・サポート
+
+        AI Course Content Generatorに関するご質問、ありがとうございます！
+        以下の情報を記入してください。より早く的確な回答が得られます。
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: 質問カテゴリ
+      description: 質問の内容に最も近いカテゴリを選択してください
+      options:
+        - 🚀 はじめ方・初期設定
+        - 🤖 コース生成機能の使い方
+        - ✏️ 編集・管理機能の使い方
+        - 💰 課金・プラン・請求
+        - 🔐 アカウント・認証
+        - 📊 分析・レポート機能
+        - 🔗 外部連携・API
+        - 🐛 トラブルシューティング
+        - 📚 ドキュメント・リソース
+        - その他
+    validations:
+      required: true
+
+  - type: textarea
+    id: question
+    attributes:
+      label: 質問内容
+      description: 知りたいこと、困っていることを具体的に記入してください
+      placeholder: |
+        例：
+        - Gemini APIキーはどこで取得できますか？
+        - コース生成時のクレジット消費量はどのように計算されますか？
+        - 生成したコースをPDF形式でエクスポートする方法は？
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: 実現したいこと
+      description: 最終的に何を実現したいか、目的を記入してください
+      placeholder: |
+        例：
+        - 企業研修用のコースを50個作成したい
+        - 既存のPowerPoint資料をコンテンツ化したい
+        - 受講者の学習進捗を管理したい
+
+  - type: textarea
+    id: tried
+    attributes:
+      label: 試したこと
+      description: すでに試してみたことがあれば記入してください
+      placeholder: |
+        例：
+        - ダッシュボードの設定を確認した
+        - ドキュメントで検索したが見つからなかった
+        - サンプルコースを生成してみた
+
+  - type: textarea
+    id: error
+    attributes:
+      label: エラーメッセージ（該当する場合）
+      description: エラーが発生している場合、メッセージを貼り付けてください
+      placeholder: |
+        例：
+        Error: API quota exceeded
+      render: shell
+
+  - type: dropdown
+    id: plan
+    attributes:
+      label: ご利用プラン
+      description: 現在利用しているプランを選択してください
+      options:
+        - 無料トライアル
+        - Basic
+        - Professional
+        - Enterprise
+        - わからない
+
+  - type: dropdown
+    id: experience
+    attributes:
+      label: AI Course Content Generatorの利用経験
+      description: どのくらい使用していますか？
+      options:
+        - 今日はじめて使う
+        - 1週間未満
+        - 1週間〜1ヶ月
+        - 1ヶ月〜3ヶ月
+        - 3ヶ月以上
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: スクリーンショット（任意）
+      description: 状況を示すスクリーンショットがあれば添付してください
+      placeholder: ここに画像をドラッグ&ドロップ
+
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: 緊急度
+      description: 回答の緊急度を選択してください
+      options:
+        - 🔥 緊急（業務が止まっている）
+        - ⭐ 高（今週中に必要）
+        - ➡️ 中（今月中に必要）
+        - 🟢 低（時間に余裕あり）
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: 追加情報
+      description: その他、回答に役立つ情報があれば記入してください
+      placeholder: |
+        例：
+        - 使用環境（OS、ブラウザ）
+        - 関連する設定情報
+        - 発生頻度
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: 確認事項
+      options:
+        - label: 既存のIssueやドキュメントで同じ質問がないか確認しました
+          required: true
+        - label: 個人情報（パスワード、APIキー等）を含めていません
+          required: true
